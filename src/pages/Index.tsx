@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, MapPin, Mail, MessageCircle, Globe, UserPlus } from "lucide-react";
+import { Phone, MapPin, Mail, MessageCircle, Globe, UserPlus, Star } from "lucide-react";
 import BackgroundEffects from "@/components/BackgroundEffects";
 import ParallaxLogo from "@/components/ParallaxLogo";
 import TypingText from "@/components/TypingText";
@@ -63,7 +63,14 @@ const contacts = [
     icon: MapPin,
     label: "Localisation",
     value: "Ariana, Tunisie",
-    href: "https://maps.google.com/?q=Big+House+Ariana+Tunisie",
+    href: "https://www.google.com/maps/place/?q=place_id:ChIJIQQXYQDL4hIRJOkpZ2BO7O4",
+  },
+  {
+    icon: Star,
+    label: "Avis Google",
+    value: "Donner votre avis ★★★★★",
+    href: "https://search.google.com/local/writereview?placeid=ChIJIQQXYQDL4hIRJOkpZ2BO7O4",
+    iconColor: "h-4 w-4 text-amber-500 fill-amber-400",
   },
 ];
 
@@ -90,8 +97,13 @@ const socials = [
   },
   {
     icon: <MapPin className="h-5 w-5" />,
-    href: "https://maps.google.com/?q=Big+House+Ariana+Tunisie",
+    href: "https://www.google.com/maps/place/?q=place_id:ChIJIQQXYQDL4hIRJOkpZ2BO7O4",
     label: "Google Maps",
+  },
+  {
+    icon: <Star className="h-5 w-5 text-amber-500 fill-amber-400" />,
+    href: "https://search.google.com/local/writereview?placeid=ChIJIQQXYQDL4hIRJOkpZ2BO7O4",
+    label: "Avis Google",
   },
 ];
 
@@ -226,15 +238,15 @@ const Index = () => {
                   + Ajouter aux contacts
                 </motion.button>
 
-                {/* Quick actions */}
-                <div className="mt-4 flex flex-wrap justify-center gap-2.5">
+                {/* Quick actions (in 1 line) */}
+                <div className="mt-4 flex w-full flex-nowrap items-center justify-center gap-1.5 sm:gap-2 px-0.5">
                   <motion.a
                     href="tel:+21652271887"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 2.0, ...spring }}
                     whileHover={{ scale: 1.15 }}
-                    className="press-feedback flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-sm"
+                    className="press-feedback flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-sm"
                     aria-label="Call +216 52 271 887"
                   >
                     <Phone className="h-4 w-4" />
@@ -245,7 +257,7 @@ const Index = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 2.05, ...spring }}
                     whileHover={{ scale: 1.15 }}
-                    className="press-feedback flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-800 shadow-sm"
+                    className="press-feedback flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-800 shadow-sm"
                     aria-label="Email bighousetunisia@gmail.com"
                   >
                     <Mail className="h-4 w-4" />
@@ -258,7 +270,7 @@ const Index = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 2.1, ...spring }}
                     whileHover={{ scale: 1.15 }}
-                    className="press-feedback flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white text-emerald-700 shadow-sm dark:text-emerald-600"
+                    className="press-feedback flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white text-emerald-700 shadow-sm dark:text-emerald-600"
                     aria-label="WhatsApp Big House"
                   >
                     <WhatsAppIcon />
@@ -271,23 +283,36 @@ const Index = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 2.12, ...spring }}
                     whileHover={{ scale: 1.15 }}
-                    className="press-feedback flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-sm"
+                    className="press-feedback flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-sm"
                     aria-label="Website Big House Ariana"
                   >
                     <Globe className="h-4 w-4" />
                   </motion.a>
                   <motion.a
-                    href="https://maps.google.com/?q=Big+House+Ariana+Tunisie"
+                    href="https://www.google.com/maps/place/?q=place_id:ChIJIQQXYQDL4hIRJOkpZ2BO7O4"
                     target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 2.18, ...spring }}
                     whileHover={{ scale: 1.15 }}
-                    className="press-feedback flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white text-amber-800 shadow-sm"
+                    className="press-feedback flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white text-amber-800 shadow-sm"
                     aria-label="Location Ariana, Tunisie"
                   >
                     <MapPin className="h-4 w-4" />
+                  </motion.a>
+                  <motion.a
+                    href="https://search.google.com/local/writereview?placeid=ChIJIQQXYQDL4hIRJOkpZ2BO7O4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 2.22, ...spring }}
+                    whileHover={{ scale: 1.15 }}
+                    className="press-feedback flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white text-amber-500 shadow-sm"
+                    aria-label="Laisser un avis Google"
+                  >
+                    <Star className="h-4 w-4 fill-amber-400 text-amber-500" />
                   </motion.a>
                 </div>
 
@@ -306,7 +331,7 @@ const Index = () => {
                       style={{ animationDelay: `${2.2 + i * 0.15}s` }}
                     >
                       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-neutral-200/60">
-                        <c.icon className="h-4 w-4 text-neutral-800" />
+                        <c.icon className={c.iconColor || "h-4 w-4 text-neutral-800"} />
                       </div>
                       <div className="min-w-0">
                         <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">
@@ -318,8 +343,8 @@ const Index = () => {
                   ))}
                 </div>
 
-                {/* Social icons */}
-                <div className="mt-6 flex flex-wrap justify-center gap-3 pb-2">
+                {/* Social icons (in 1 line) */}
+                <div className="mt-6 flex w-full flex-nowrap items-center justify-center gap-1.5 sm:gap-2 pb-2 px-0.5">
                   {socials.map((s, i) => (
                     <motion.a
                       key={s.label}
@@ -335,7 +360,7 @@ const Index = () => {
                         boxShadow: "0 10px 28px -10px hsl(38 85% 65% / 0.4)",
                       }}
                       whileTap={{ scale: 0.9 }}
-                      className="press-feedback flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-800 shadow-sm transition-colors hover:border-neutral-300 hover:text-neutral-950"
+                      className="press-feedback flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-800 shadow-sm transition-colors hover:border-neutral-300 hover:text-neutral-950 [&_svg]:h-4 [&_svg]:w-4"
                     >
                       {s.icon}
                     </motion.a>
